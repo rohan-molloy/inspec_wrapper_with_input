@@ -20,3 +20,10 @@ inputs:
   - name: amplifier_max_volume_child2
     value: 1400
     profile: child2
+#### 
+# InSpec Product enhancement request to specify one input for multiple child profiles
+####
+# inputs:
+#   - name: amplifier_max_volume
+#     value: 1400
+#     profile: [child, child2]  # <- Need this
