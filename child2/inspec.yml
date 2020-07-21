@@ -1,4 +1,4 @@
-name: child
+name: child2
 title: InSpec Profile
 maintainer: The Authors
 copyright: The Authors
@@ -9,7 +9,7 @@ version: 0.1.0
 supports:
   platform: os
 inputs:
-- name: amplifier_max_volume_child
-  value: 2
+- name: amplifier_max_volume_child2
+  value: 6
 - name: tag_example
   value: nothing

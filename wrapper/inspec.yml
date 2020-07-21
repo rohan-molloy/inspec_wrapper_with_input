@@ -9,9 +9,14 @@ version: 0.1.0
 supports:
   platform: os
 depends:
-- name: child
-  path: ../child
+  - name: child
+    path: ../child
+  - name: child2
+    path: ../child2
 inputs:
-- name: amplifier_max_volume
-  value: 1400
-  profile: child 
+  - name: amplifier_max_volume_child
+    value: 1400
+    profile: child
+  - name: amplifier_max_volume_child2
+    value: 1400
+    profile: child2

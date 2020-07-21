@@ -5,3 +5,7 @@ depends:
   resolved_source:
     path: "/Users/anthonyrees/src/inspec/inspec_wrapper_with_input/child"
   version_constraints: []
+- name: child2
+  resolved_source:
+    path: "/Users/anthonyrees/src/inspec/inspec_wrapper_with_input/child2"
+  version_constraints: []
