@@ -9,21 +9,11 @@ version: 0.1.0
 supports:
   platform: os
 depends:
-  - name: child
-    path: ../child
-  - name: child2
-    path: ../child2
+- name: child
+  path: ../child
+- name: child2
+  path: ../child2
 inputs:
-  - name: amplifier_max_volume_child
-    value: 1400
-    profile: child
-  - name: amplifier_max_volume_child2
-    value: 1400
-    profile: child2
-#### 
-# InSpec Product enhancement request to specify one input for multiple child profiles
-####
-# inputs:
-#   - name: amplifier_max_volume
-#     value: 1400
-#     profile: [child, child2]  # <- Need this
+- name: amplifier_max_volume
+- name: amplifier_max_volume_child_1
+- name: amplifier_max_volume_child_2
