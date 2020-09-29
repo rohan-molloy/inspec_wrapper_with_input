@@ -1,10 +1,11 @@
 # copyright: 2018, The Authors
 
-tag_example = input('amplifier_max_volume_child')
+control 'Child 1 - Big Rock Show' do
+  describe input('amplifier_max_volume') do # This line reads the value of the input
+    it { should cmp 11 }
+  end
 
-control 'Child - Big Rock Show' do
-  tag acsc: tag_example
-  describe input('amplifier_max_volume_child') do    # This line reads the value of the input
-    it { should cmp 11 } 
+  describe input('amplifier_max_volume_child_1') do # This line reads the value of the input
+    it { should cmp 110 }
   end
 end

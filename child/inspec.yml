@@ -9,7 +9,7 @@ version: 0.1.0
 supports:
   platform: os
 inputs:
-- name: amplifier_max_volume_child
+- name: amplifier_max_volume
   value: 2
-- name: tag_example
-  value: nothing
+- name: amplifier_max_volume_child_1
+  value: 200
