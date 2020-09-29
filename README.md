@@ -40,6 +40,10 @@ Run it from the Wrapper which will execute the child and child2 profile.  The `i
 
 ```bash
 cd wrapper
+```
+  
+Now execute the InSpec test and pass in the `inputs`
+```bash
 inspec exec . --input amplifier_max_volume=1400 amplifier_max_volume_child_1=2400 amplifier_max_volume_child_2=3400
 ```
 
