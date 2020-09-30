@@ -13,3 +13,5 @@ inputs:
   value: 6
 - name: amplifier_max_volume_child_2
   value: 600
+- name: amplifier_text
+  value: 'test'

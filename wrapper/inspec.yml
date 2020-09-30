@@ -15,5 +15,6 @@ depends:
   path: ../child2
 inputs:
 - name: amplifier_max_volume
+- name: amplifier_text
 - name: amplifier_max_volume_child_1
 - name: amplifier_max_volume_child_2

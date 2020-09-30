@@ -1,7 +1,7 @@
 # inspec_wrapper_with_input
 An InSpec wrapper profile example that child profiles and passes input variables
   
-The input `amplifier_max_volume` is passed from the Wrapper to the Child and Child2.
+The input `amplifier_max_volume` and `amplifier_text` is passed from the Wrapper to the Child and Child2.
 
 The Child input value is:  
 ```yml
@@ -10,6 +10,8 @@ inputs:
   value: 2
 - name: amplifier_max_volume_child_1
   value: 200
+- name: amplifier_text
+  value: 'rees'
 ```
   
 The Child2 input value is:  
@@ -19,6 +21,8 @@ inputs:
   value: 6
 - name: amplifier_max_volume_child_2
   value: 600
+- name: amplifier_text
+  value: 'anthony'
 ```
   
 The Wrapper input value is:  
@@ -30,6 +34,7 @@ depends:
   path: ../child2
 inputs:
 - name: amplifier_max_volume
+- name: amplifier_text
 - name: amplifier_max_volume_child_1
 - name: amplifier_max_volume_child_2
 ```
@@ -44,7 +49,7 @@ cd wrapper
   
 Now execute the InSpec test and pass in the `inputs`
 ```bash
-inspec exec . --input amplifier_max_volume=1400 amplifier_max_volume_child_1=2400 amplifier_max_volume_child_2=3400
+inspec exec . --input amplifier_max_volume=1400 amplifier_max_volume_child_1=2400 amplifier_max_volume_child_2=3400 amplifier_text='reesy'
 ```
 
 ```bash
@@ -100,7 +105,7 @@ InSpec can download all dependencies and generate a lockfile in a vendor directo
   
 The command is run from the ` inspec_wrapper_with_input` directory :
 ```bash
-inspec vendor wrapper/ --overwrite && inspec exec --log-level=debug wrapper/ --input amplifier_max_volume=1400 amplifier_max_volume_child_1=2400 amplifier_max_volume_child_2=3400
+inspec vendor wrapper/ --overwrite && inspec exec --log-level=debug wrapper/ --input amplifier_max_volume=1400 amplifier_max_volume_child_1=2400 amplifier_max_volume_child_2=3400 amplifier_text='reesy'
 ```
   
 The vendor output will produce a `inspec.lock` file like this with all the dependencies:
@@ -155,7 +160,7 @@ Profile: InSpec Profile (child)
 Version: 0.1.0
 Target:  local://
 
-  ×  Child 1 - Big Rock Show: 1400 (2 failed)
+  ×  Child 1 - Big Rock Show: 1400 (3 failed)
      ×  1400 is expected to cmp == 11
 
      expected: 11
@@ -170,13 +175,20 @@ Target:  local://
 
      (compared using `cmp` matcher)
 
+     ×  reesy is expected to cmp == "anthony"
+
+     expected: anthony
+          got: reesy
+
+     (compared using `cmp` matcher)
+
 
 
 Profile: InSpec Profile (child2)
 Version: 0.1.0
 Target:  local://
 
-  ×  Child2 - Small Rock Show: 1400 (2 failed)
+  ×  Child2 - Small Rock Show: 1400 (3 failed)
      ×  1400 is expected to cmp == 11
 
      expected: 11
@@ -191,9 +203,16 @@ Target:  local://
 
      (compared using `cmp` matcher)
 
+     ×  reesy is expected to cmp == "rees"
+
+     expected: rees
+          got: reesy
+
+     (compared using `cmp` matcher)
+
 
 
 Profile Summary: 0 successful controls, 2 control failures, 0 controls skipped
-Test Summary: 0 successful, 4 failures, 0 skipped
+Test Summary: 0 successful, 6 failures, 0 skipped
 ```
 
