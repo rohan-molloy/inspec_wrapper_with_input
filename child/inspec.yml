@@ -15,3 +15,7 @@ inputs:
   value: 200
 - name: amplifier_text
   value: 'test2'
+depends:
+- name: child2
+  path: ../child2
+

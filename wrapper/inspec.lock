@@ -1,0 +1,12 @@
+---
+lockfile_version: 1
+depends:
+- name: child
+  resolved_source:
+    path: C:/Users/luseradm/Documents/inspec_wrapper_with_input/child
+  version_constraints: []
+  dependencies:
+  - name: child2
+    resolved_source:
+      path: C:/Users/luseradm/Documents/inspec_wrapper_with_input/child2
+    version_constraints: []

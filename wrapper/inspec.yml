@@ -11,8 +11,6 @@ supports:
 depends:
 - name: child
   path: ../child
-- name: child2
-  path: ../child2
 inputs:
 - name: amplifier_max_volume
 - name: amplifier_text
